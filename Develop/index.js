@@ -9,17 +9,6 @@ const questions = [
         type: 'input',
         message: 'Please enter the title of your project',
         name: 'title',
-        validate: title => {
-            if (title.length < 8) {
-                return "Project title is too short."
-            }
-            else if (title.length > 50) {
-                return "Project title is too long."
-            }
-            else {
-                return true;
-            }
-        }
     },
     {
         type: 'input',
