@@ -1,0 +1,28 @@
+{
+  "name": "github-readme-generator",
+  "version": "0.0.1",
+  "description": "\"Github Readme.md Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CMFuertes",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CMFuertes/Good-README-Generator.git"
+  },
+  "keywords": [
+    "readme",
+    "github"
+  ],
+  "bugs": {
+    "url": "https://github.com/CMFuertes/Good-README-Generator/issues"
+  },
+  "homepage": "https://github.com/CMFuertes/Good-README-Generator#readme"
+}
