@@ -11,6 +11,17 @@ inquirer.prompt([
         type: 'input',
         name: 'user',
         message: "What is your GitHub username?",
+        validate: user => {
+            if (user.length < 1 && user.length > 39) {
+                return "User name must be between 1 and 39 characters, please try again.";
+            }
+            else if (user.startsWith("-", 0)) {
+                return "Username cannot start with a dash";
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
@@ -60,15 +71,24 @@ inquirer.prompt([
         }
     },
     {
-        type: 'checkbox',
+        type: "input",
+        message: "Describe what installations are needed to run the project",
+        name: "installation"
+      },
+      {
+        type: 'input',
+        message: 'How would someone use your project?',
+        name: 'howtouse'
+      },
+      {
+        type: 'input',
+        message: 'What tests were run?',
+        name: 'test'
+      },
+    {
+        type: 'input',
         name: 'license',
-        message: 'Which License is this project covered under?',
-        choices: [
-            "MIT",
-            "APACHE 2.0",
-            "GPL 3.0",
-            "None",
-        ]
+        message: 'How is the program licensed?',
     },
 
 ]).then(response => {
@@ -76,31 +96,56 @@ inquirer.prompt([
     console.log(response.userpassword);
 
     let data2Write = "";
-    data2Write += "# Password File\n";
+    data2Write += `# ${response.title}\n`;
+
     data2Write += "\n";
-    data2Write += "## User\n"; // heading #2
+    data2Write += "## User\n";
     data2Write += "\n";
-    data2Write += `${response.user}\n`; // data under heading
+    data2Write += `${response.user}\n`; 
+
     data2Write += "\n";
     data2Write += "## Password\n";
     data2Write += "\n";
     data2Write += `${response.userpassword}\n`;
+
     data2Write += "\n";
     data2Write += "## Repository Name\n";
     data2Write += "\n";
     data2Write += `${response.reponame}\n`;
+
     data2Write += "\n";
     data2Write += "## Description\n";
     data2Write += "\n";
     data2Write += `${response.description}\n`;
+
+    data2Write += "\n";
+    data2Write += "## Installation\n";
+    data2Write += "\n";
+    data2Write += `${response.installation}\n`;
+
+    data2Write += "\n";
+    data2Write += "## How To Use\n";
+    data2Write += "\n";
+    data2Write += `${response.howtouse}\n`;
+
+    data2Write += "\n";
+    data2Write += "## Tests Needed\n";
+    data2Write += "\n";
+    data2Write += `${response.test}\n`;
+
+
     data2Write += "\n";
     data2Write += "## License\n";
     data2Write += "\n";
     data2Write += `${response.license}\n`;
-    data2Write += "\n";
+
+    data2Write += `![GitHub](https://img.shields.io/github/license/${response.user}/${response.reponame})`
+
+
+
 
     
-    fs.writeFile('readme-out.md', data2Write, 'utf8', err => {
+    fs.writeFile('newreadme.md', data2Write, 'utf8', err => {
         if (err) return console.log(err);
         return console.log("We finished writing the file.");
     });
