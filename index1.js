@@ -6,38 +6,29 @@ inquirer.prompt([
         type: 'input',
         message: 'Please enter the title of your project',
         name: 'title',
-        validate: title => {
-            if (title.length < 8) {
-                return "Project title is too short."
-            }
-            else if (title.length > 50) {
-                return "Project title is too long."
-            }
-            else {
-                return true;
-            }
-        }
     },
     {
         type: 'input',
         name: 'user',
         message: "What is your GitHub username?",
-        validate: user => {
-            if (user.length < 1 && user.length > 39) {
-                return "User name must be between 1 and 39 characters, please try again.";
-            }
-            else if (user.startsWith("-", 0)) {
-                return "Username cannot start with a dash";
-            }
-            else {
-                return true;
-            }
-        }
     },
+    {
+        type: "input",
+        message: "What is your GitHub email?",
+        name: "email", 
+        validate: function(value) {
+         var pass = value.match
+         (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+         if (pass) {
+            return true;
+          }
+            return 'Please enter a valid email address'   
+        },
+      },
     {
         type: 'password',
         message: 'Please enter your password',
-        name: 'pass',
+        name: 'userpassword',
         validate: pass => {
             if (pass.length < 8) {
                 return "password is too short."
@@ -54,14 +45,6 @@ inquirer.prompt([
         type: 'input',
         name: 'reponame',
         message: 'What is your repository name?',
-        validate: (reponame) => {
-            if (reponame.length) {
-                return true;
-            }
-            else {
-                return 'Name invalid, please try again!';
-            }
-        }
     },
     {
         type: 'input',
@@ -90,12 +73,8 @@ inquirer.prompt([
 
 ]).then(response => {
     console.log(response.user);
-    console.log(response.pass);
+    console.log(response.userpassword);
 
-    // fs.writeFile('readme-out.md', JSON.stringify(response, null, 2), 'utf8', err => {
-    //     if(err) return console.log(err);
-    //     return console.log("We finished writing the file.");
-    // });
     let data2Write = "";
     data2Write += "# Password File\n";
     data2Write += "\n";
@@ -105,7 +84,7 @@ inquirer.prompt([
     data2Write += "\n";
     data2Write += "## Password\n";
     data2Write += "\n";
-    data2Write += `${response.pass}\n`;
+    data2Write += `${response.userpassword}\n`;
     data2Write += "\n";
     data2Write += "## Repository Name\n";
     data2Write += "\n";

@@ -31,7 +31,7 @@ const questions = [
     {
         type: 'password',
         message: 'Please enter your password',
-        name: 'pass',
+        name: 'userpassword',
         validate: pass => {
             if (pass.length < 8) {
                 return "password is too short."
@@ -48,14 +48,6 @@ const questions = [
         type: 'input',
         name: 'reponame',
         message: 'What is your repository name?',
-        // validate: (reponame) => {
-        //     if (reponame.length) {
-        //         return true;
-        //     }
-        //     else {
-        //         return 'Name invalid, please try again!';
-        //     }
-        // }
     },
     {
         type: 'input',
@@ -84,22 +76,22 @@ const questions = [
 
 ];
 
+
+
 inquirer.prompt(questions).then(function(response){
     console.log(response);
 
-    const readme = generateMarkdown.generateMarkdown(response);
-    console.log(readme);
-    // function to write README file
-})
-fs.writeFile('readme-out.md', readme, 'utf8', err => {
-    if (err) return console.log(err);
-    return console.log("We finished writing the file.");
+    const content = md.generateMarkdown(response);
+
+    writeToFile('README.md', content);
+
+
 });
 
-// // function to initialize program
-// function init() {
+function writeToFile(filename, data) {
+    fs.writeFile(fileName, data, function(error) {
+        if(error) console.log(error);
+        else console.log('Success!');
+      });
 
-// }
-
-// // function call to initialize program
-// init();
+}
