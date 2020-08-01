@@ -1,10 +1,22 @@
-# GOODREADME Generator
+# Password File
 
 ## User
 
-crissy@aol.com
+cmfuertes
 
 ## Password
 
-belle123456677
+bellleeee
+
+## Repository Name
+
+git-rep
+
+## Description
+
+this is homework
+
+## License
+
+MIT
 

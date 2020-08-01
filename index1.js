@@ -1,10 +1,7 @@
 const inquirer = require('inquirer');
-const api = require('./utils/api.js');
-const md = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 
-// array of questions for user
-const questions = [
+inquirer.prompt([
     {
         type: 'input',
         message: 'Please enter the title of your project',
@@ -91,24 +88,42 @@ const questions = [
         ]
     },
 
-];
+]).then(response => {
+    console.log(response.user);
+    console.log(response.pass);
 
-inquirer.prompt(questions).then(function(response){
-    console.log(response);
+    // fs.writeFile('readme-out.md', JSON.stringify(response, null, 2), 'utf8', err => {
+    //     if(err) return console.log(err);
+    //     return console.log("We finished writing the file.");
+    // });
+    let data2Write = "";
+    data2Write += "# Password File\n";
+    data2Write += "\n";
+    data2Write += "## User\n"; // heading #2
+    data2Write += "\n";
+    data2Write += `${response.user}\n`; // data under heading
+    data2Write += "\n";
+    data2Write += "## Password\n";
+    data2Write += "\n";
+    data2Write += `${response.pass}\n`;
+    data2Write += "\n";
+    data2Write += "## Repository Name\n";
+    data2Write += "\n";
+    data2Write += `${response.reponame}\n`;
+    data2Write += "\n";
+    data2Write += "## Description\n";
+    data2Write += "\n";
+    data2Write += `${response.description}\n`;
+    data2Write += "\n";
+    data2Write += "## License\n";
+    data2Write += "\n";
+    data2Write += `${response.license}\n`;
+    data2Write += "\n";
 
-    const readme = generateMarkdown.generateMarkdown(response);
-    console.log(readme);
-    // function to write README file
-})
-fs.writeFile('readme-out.md', readme, 'utf8', err => {
-    if (err) return console.log(err);
-    return console.log("We finished writing the file.");
+    
+    fs.writeFile('readme-out.md', data2Write, 'utf8', err => {
+        if (err) return console.log(err);
+        return console.log("We finished writing the file.");
+    });
+
 });
-
-// // function to initialize program
-// function init() {
-
-// }
-
-// // function call to initialize program
-// init();
