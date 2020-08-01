@@ -1,7 +1,7 @@
-# uhdiw
+# READMENGEn
 ## Table Of Contents 
 
-1) [Introduction](#introduction) 
+1) [Introduction](#user) 
 
 2) [Description](#description)
 
@@ -18,45 +18,41 @@
 7) [Questions](#questions)
 ## User
 
-qiudhwiqudqw
+CMFuertes
 
 ## Email
 
-uqdhiqwhd@aill.com
-
-## Password
-
-qdhiqwhdiqw
+cristhal.fuertes@gmail.com
 
 ## Repository Name
 
-quhduiqw
+GOODREADMN
 
 ## Description
 
-udqhwiudq
+this thing
 
 ## Installation
 
-udqhiu
+npn init inquirer
 
 ## Usage
 
-qwudhiqw
+for homeowork
 
 ## Tests
 
-uqdhiw
+node index
 
 ## Contributing
 
-qudhuiwqh
+idk ask them
 
 ## Questions
 
-If you have any questions, please contact qiudhwiqudqw at uqdhiqwhd@aill.com
+If you have any questions, please contact CMFuertes at cristhal.fuertes@gmail.com
 ## License
 
 MIT
 
-![GitHub](https://img.shields.io/github/license/qiudhwiqudqw/quhduiqw)
+![GitHub](https://img.shields.io/github/license/CMFuertes/GOODREADMN)

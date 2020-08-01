@@ -1,4 +1,4 @@
-# README-Generator ![https://img.shields.io/github/license/cmfuertes/Good-README-Generator](https://img.shields.io/github/license/cmfuertes/Good-README-Generator)
+# Good-README-Generator ![https://img.shields.io/github/license/cmfuertes/Good-README-Generator](https://img.shields.io/github/license/cmfuertes/Good-README-Generator)
 
 ## Table of Contents
 
@@ -18,17 +18,22 @@ CMFuertes
 
 ## Repository Name
 
-repo name
+Good-README-Generator
 
 ## Description 
 
-fuiwhefwe description
+This project is a tool that will generate a README.md file and format it based on answers you provide.
+
+Repo link -
+https://github.com/CMFuertes/Good-README-Generator
 
 ## Installation 
 
+You will need to run npm install in the command line to install the required Node Modules. Those are included in the package.json. If need be, you may clone this repository as well. 
 
 ## Usage 
 
+Change into the directory this project is located, then run node index.js.
 
 ## License 
 
@@ -36,6 +41,12 @@ MIT
 
 ## Contributing 
 
+If you have any suggestions, this repository is open to changes. Make a pull request if you feel an improvement can be made. 
+
 ## Test 
 
+Manual tests with node "index.js" were frequently run in order to assure the README was generated properly. 
+
 ## Questions 
+
+Feel free to send me an email at cristhal.fuertes@gmail.com if you have any questions. Otherwise, I assure you, the generator is simple to use. 
