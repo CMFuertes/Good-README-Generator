@@ -14,17 +14,6 @@ const questions = [
         type: 'input',
         name: 'user',
         message: "What is your GitHub username?",
-        validate: user => {
-            if (user.length < 1 && user.length > 39) {
-                return "User name must be between 1 and 39 characters, please try again.";
-            }
-            else if (user.startsWith("-", 0)) {
-                return "Username cannot start with a dash";
-            }
-            else {
-                return true;
-            }
-        }
     },
     {
         type: 'password',
