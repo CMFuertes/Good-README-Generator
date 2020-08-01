@@ -16,6 +16,19 @@ const questions = [
         message: "What is your GitHub username?",
     },
     {
+        type: "input",
+        message: "What is your GitHub email?",
+        name: "email", 
+        validate: function(value) {
+         var pass = value.match
+         (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+         if (pass) {
+            return true;
+          }
+            return 'Please enter a valid email address'   
+        },
+      },
+    {
         type: 'password',
         message: 'Please enter your password',
         name: 'pass',
@@ -35,14 +48,14 @@ const questions = [
         type: 'input',
         name: 'reponame',
         message: 'What is your repository name?',
-        validate: (reponame) => {
-            if (reponame.length) {
-                return true;
-            }
-            else {
-                return 'Name invalid, please try again!';
-            }
-        }
+        // validate: (reponame) => {
+        //     if (reponame.length) {
+        //         return true;
+        //     }
+        //     else {
+        //         return 'Name invalid, please try again!';
+        //     }
+        // }
     },
     {
         type: 'input',
