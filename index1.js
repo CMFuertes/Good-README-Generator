@@ -37,22 +37,6 @@ inquirer.prompt([
         },
       },
     {
-        type: 'password',
-        message: 'Please enter your password',
-        name: 'userpassword',
-        validate: pass => {
-            if (pass.length < 8) {
-                return "password is too short."
-            }
-            else if (pass.length > 32) {
-                return "password is too long."
-            }
-            else {
-                return true;
-            }
-        }
-    },
-    {
         type: 'input',
         name: 'reponame',
         message: 'What is your repository name?',
@@ -127,11 +111,6 @@ inquirer.prompt([
     data2Write += "## Email\n";
     data2Write += "\n";
     data2Write += `${response.email}\n`; 
-
-    data2Write += "\n";
-    data2Write += "## Password\n";
-    data2Write += "\n";
-    data2Write += `${response.userpassword}\n`;
 
     data2Write += "\n";
     data2Write += "## Repository Name\n";

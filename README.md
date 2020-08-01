@@ -14,11 +14,7 @@
 
 ## User
 
-username
-
-## Password
-
-fuwhefhdsf
+CMFuertes
 
 ## Repository Name
 
