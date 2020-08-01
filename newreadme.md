@@ -4,31 +4,43 @@
 
 cmfuertes
 
+## Email
+
+cristhal.fuertes@aol.com
+
 ## Password
 
-dhdhdhdhdh
+password
 
 ## Repository Name
 
-reponmae
+repo
 
 ## Description
 
-description
+name
 
 ## Installation
 
-npm init
+uerhger
 
 ## How To Use
 
-for homework
+owefuhwei
 
 ## Tests Needed
 
-nom in
+ofhew
 
+## Contributions
+
+fhiuewhf
+
+## Questions
+
+If you have any questions, please contact cmfuertes at cristhal.fuertes@aol.com
 ## License
 
 MIT
-![GitHub](https://img.shields.io/github/license/cmfuertes/reponmae)
+
+![GitHub](https://img.shields.io/github/license/cmfuertes/repo)

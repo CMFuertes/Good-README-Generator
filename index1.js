@@ -56,6 +56,13 @@ inquirer.prompt([
         type: 'input',
         name: 'reponame',
         message: 'What is your repository name?',
+        validate: input => {
+            const validStr = /^[a-z\d_-]{0,99}$/i;
+            if(validStr.test(input)){
+                return true;
+            }
+            return "Enter a valid repo name";
+        }
     },
     {
         type: 'input',
@@ -85,6 +92,11 @@ inquirer.prompt([
         message: 'What tests were run?',
         name: 'test'
       },
+      {
+        type: 'input',
+        message: 'How could someone contribute to your project?',
+        name: 'contributors'
+      },
     {
         type: 'input',
         name: 'license',
@@ -92,8 +104,6 @@ inquirer.prompt([
     },
 
 ]).then(response => {
-    console.log(response.user);
-    console.log(response.userpassword);
 
     let data2Write = "";
     data2Write += `# ${response.title}\n`;
@@ -102,6 +112,11 @@ inquirer.prompt([
     data2Write += "## User\n";
     data2Write += "\n";
     data2Write += `${response.user}\n`; 
+
+    data2Write += "\n";
+    data2Write += "## Email\n";
+    data2Write += "\n";
+    data2Write += `${response.email}\n`; 
 
     data2Write += "\n";
     data2Write += "## Password\n";
@@ -133,16 +148,24 @@ inquirer.prompt([
     data2Write += "\n";
     data2Write += `${response.test}\n`;
 
+    data2Write += "\n";
+    data2Write += "## Contributions\n";
+    data2Write += "\n";
+    data2Write += `${response.contributors}\n`;
+
+    data2Write += "\n";
+    data2Write += "## Questions\n";
+    data2Write += "\n";
+    data2Write += `If you have any questions, please contact ${response.user} at ${response.email}`;
+
 
     data2Write += "\n";
     data2Write += "## License\n";
     data2Write += "\n";
     data2Write += `${response.license}\n`;
+    data2Write += "\n";
 
     data2Write += `![GitHub](https://img.shields.io/github/license/${response.user}/${response.reponame})`
-
-
-
 
     
     fs.writeFile('newreadme.md', data2Write, 'utf8', err => {
