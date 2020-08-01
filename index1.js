@@ -108,6 +108,16 @@ inquirer.prompt([
     let data2Write = "";
     data2Write += `# ${response.title}\n`;
 
+    data2Write += `## Table Of Contents 
+\n1) [Introduction](#user) 
+\n2) [Description](#description)
+\n3) [Installation](#installation)
+\n4) [Usage](#usage)
+\n5) [License](#license)
+\n6) [Contributing](#contributing)
+\n7) [Tests](#tests)
+\n7) [Questions](#questions)`
+
     data2Write += "\n";
     data2Write += "## User\n";
     data2Write += "\n";
@@ -139,17 +149,17 @@ inquirer.prompt([
     data2Write += `${response.installation}\n`;
 
     data2Write += "\n";
-    data2Write += "## How To Use\n";
+    data2Write += "## Usage\n";
     data2Write += "\n";
     data2Write += `${response.howtouse}\n`;
 
     data2Write += "\n";
-    data2Write += "## Tests Needed\n";
+    data2Write += "## Tests\n";
     data2Write += "\n";
     data2Write += `${response.test}\n`;
 
     data2Write += "\n";
-    data2Write += "## Contributions\n";
+    data2Write += "## Contributing\n";
     data2Write += "\n";
     data2Write += `${response.contributors}\n`;
 
