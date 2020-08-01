@@ -1,7 +1,7 @@
 # Good-README-Generator ![https://img.shields.io/github/license/cmfuertes/Good-README-Generator](https://img.shields.io/github/license/cmfuertes/Good-README-Generator)
 
 ## Project Gif
-![Project gif](assets\READMEgif.gif)
+![Project gif](https://github.com/CMFuertes/Good-README-Generator/blob/master/assets/READMEgif.gif?raw=true)
 
 ## Table of Contents
 
